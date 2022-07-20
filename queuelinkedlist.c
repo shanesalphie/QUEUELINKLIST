@@ -14,13 +14,14 @@ void enqueue (int x)
 		{
 			head=(struct node *)malloc(sizeof(struct node));
 			head -> data =x;
+			new=head;
 		}
 		else
 		{
-			new=(struct node *)malloc(sizeof(struct node));
-			new-> data=x;
-			new->next=head;
-			head=new;
+			new->next=(struct node *)malloc(sizeof(struct node));
+			new=new->next;
+			new->data=x;
+			
 		}
 }
 void dequeue()
